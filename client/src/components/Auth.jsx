@@ -29,16 +29,16 @@ const Auth=()=>{
     const handleSubmit= async (event)=>{
         event.preventDefault();
 
-        const {fullName,username,password,avatar,phoneNumber}=form;
+        const {username,password,avatar,phoneNumber}=form;
 
         const URL="http://localhost:5000/auth";
 
-        const {data:{token,userID,hashedPassword}}=await axios.post(`${URL}/${isSignup ? "signup" : "login"}`,{
+        const {data:{token,userID,hashedPassword,fullName}}=await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`,{
             username,
             password,
-            fullName,
+            fullName:form.fullName,
             phoneNumber,
-            avatar
+            avatar,
         });
         cookies.set('token',token);
         cookies.set('username',username);

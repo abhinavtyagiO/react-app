@@ -11,14 +11,14 @@ const ChannelContainer=({isCreating, setIsCreating, isEditing, setIsEditing, cre
     if(isCreating){
         return(
             <div className="channel__container">
-                <CreateChannel createType={createType} setIsCreating={setIsEditing}/>
+                <CreateChannel createType={createType} setIsCreating={setIsCreating}/>
             </div>
         )
     }
     if(isEditing){
         return(
             <div className="channel__container">
-                <CreateChannel setIsEditing={setIsEditing}/>
+                <EditChannel setIsEditing={setIsEditing}/>
             </div>
         )
     }
